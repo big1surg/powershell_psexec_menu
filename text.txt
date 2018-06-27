@@ -1,0 +1,20 @@
+LINE ONE - TITLE
+LINE TWO - LINK or PSEXEC command, leave no space at the end
+
+IPCONFIG 
+ipconfig
+
+ACROBAT 11 STD //first do gpupdate
+-i -s -d "" -start http://Adobe_Acrobat_Std_11_32bit?start
+
+DNS
+-i -s -d "" -start http://UpdateDns?start
+
+FIND MAPPED DRIVES
+-i -s -d "" -start http://FindMappedDrives?start
+
+FLUSH DNS
+ipconfig /flushdns
+
+GPUPDATE
+gpupdate /force
