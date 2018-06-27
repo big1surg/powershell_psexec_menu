@@ -58,7 +58,7 @@ Function Get-OOB($comp){
 }
 
 #read the text file with all titles and links
-$applications = Get-Content "itweblinks.txt" | Where-Object {$_}
+$applications = Get-Content "text.txt" | Where-Object {$_}
 $totalItems =  $applications.count
 #half of the lines are titles, other half are links
 $arrayOfTitles = 0..($totalItems/2)
