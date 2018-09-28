@@ -13,7 +13,7 @@ Function Show-Menu($comp, $numberOfItems, $arrayOfApplications){
     $printerNumber = $arrayOfApplications.Count
     Write-Host "$hostNumber HOST"
     Write-Host "$printerNumber PRINTER"
-    Write-Host "*  (q) TO QUIT                       *"
+    Write-Host "*  (n) Next Item/Quit if Last        *"
     Write-Host "--------------------------------------`n"
 }
 
@@ -128,9 +128,9 @@ foreach ($compName in $compArray) {
                         #add all files
                         Write-Host -fore Green 'Adding All Files...'
                         Sleep-For-Bit(5)
-                    }'q'{
-                        if ($count -eq $compArray.Count) {
-                            Write-Host -fore Green 'Exiting Program'
+                    }'n'{
+                        if ($count -lt $compArray.Count) {
+                            Write-Host -fore Green 'Next Item'
                         }else{
                             return
                             break
@@ -141,7 +141,7 @@ foreach ($compName in $compArray) {
                     }
                 } #end switch
         } #end foreach
-    } until($choice -eq 'q')
+    } until($choice -eq 'n')
     Clear-Host
     $count = $count + 1 #increments x of x
 }#end foreach
